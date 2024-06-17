@@ -50,19 +50,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/alexandrumircean/.nuget/packages/": {}
+    "/Users/codedbychavez/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/alexandrumircean/Desktop/ConfigCatInDotnetSample/ConfigCatInDotnetSample.csproj",
+      "projectUniqueName": "/Users/codedbychavez/repos/configcat/configcat-in-dotnet-sample/ConfigCatInDotnetSample.csproj",
       "projectName": "ConfigCatInDotnetSample",
-      "projectPath": "/Users/alexandrumircean/Desktop/ConfigCatInDotnetSample/ConfigCatInDotnetSample.csproj",
-      "packagesPath": "/Users/alexandrumircean/.nuget/packages/",
-      "outputPath": "/Users/alexandrumircean/Desktop/ConfigCatInDotnetSample/obj/",
+      "projectPath": "/Users/codedbychavez/repos/configcat/configcat-in-dotnet-sample/ConfigCatInDotnetSample.csproj",
+      "packagesPath": "/Users/codedbychavez/.nuget/packages/",
+      "outputPath": "/Users/codedbychavez/repos/configcat/configcat-in-dotnet-sample/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/alexandrumircean/.nuget/NuGet/NuGet.Config"
+        "/Users/codedbychavez/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
