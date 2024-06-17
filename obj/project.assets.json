@@ -1,0 +1,122 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "ConfigCat.Client/9.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ConfigCat.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ConfigCat.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConfigCat.Client/9.2.0": {
+      "sha512": "jBa1GQo1Tnd1lCxo8z9JJFXAdktnIXfOgoVZ/1oQipt7iVtVYjmoYZXHzhF816mYWdee2BAB4uFHSBbfOHiK6w==",
+      "type": "package",
+      "path": "configcat.client/9.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "configcat.client.9.2.0.nupkg.sha512",
+        "configcat.client.nuspec",
+        "icon.png",
+        "lib/net45/ConfigCat.Client.dll",
+        "lib/net45/ConfigCat.Client.xml",
+        "lib/net461/ConfigCat.Client.dll",
+        "lib/net461/ConfigCat.Client.xml",
+        "lib/net5.0/ConfigCat.Client.dll",
+        "lib/net5.0/ConfigCat.Client.xml",
+        "lib/net6.0/ConfigCat.Client.dll",
+        "lib/net6.0/ConfigCat.Client.xml",
+        "lib/netstandard2.0/ConfigCat.Client.dll",
+        "lib/netstandard2.0/ConfigCat.Client.xml",
+        "lib/netstandard2.1/ConfigCat.Client.dll",
+        "lib/netstandard2.1/ConfigCat.Client.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "ConfigCat.Client >= 9.2.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/alexandrumircean/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/alexandrumircean/Desktop/ConfigCatInDotnetSample/ConfigCatInDotnetSample.csproj",
+      "projectName": "ConfigCatInDotnetSample",
+      "projectPath": "/Users/alexandrumircean/Desktop/ConfigCatInDotnetSample/ConfigCatInDotnetSample.csproj",
+      "packagesPath": "/Users/alexandrumircean/.nuget/packages/",
+      "outputPath": "/Users/alexandrumircean/Desktop/ConfigCatInDotnetSample/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/alexandrumircean/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "ConfigCat.Client": {
+            "target": "Package",
+            "version": "[9.2.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
