@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kNMb6xxWuN0=",
+  "dgSpecHash": "4gi12PpdiVs=",
   "success": true,
-  "projectFilePath": "/Users/alexandrumircean/Desktop/ConfigCatInDotnetSample/ConfigCatInDotnetSample.csproj",
+  "projectFilePath": "/Users/codedbychavez/repos/configcat/configcat-in-dotnet-sample/FeatureFlagsInDotNetSample.csproj",
   "expectedPackageFiles": [
-    "/Users/alexandrumircean/.nuget/packages/configcat.client/9.2.0/configcat.client.9.2.0.nupkg.sha512"
+    "/Users/codedbychavez/.nuget/packages/configcat.client/9.2.0/configcat.client.9.2.0.nupkg.sha512"
   ],
   "logs": []
 }

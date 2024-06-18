@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "FeatureFlagsInDotNetSample/1.0.0": {
+        "dependencies": {
+          "ConfigCat.Client": "9.2.0"
+        },
+        "runtime": {
+          "FeatureFlagsInDotNetSample.dll": {}
+        }
+      },
+      "ConfigCat.Client/9.2.0": {
+        "runtime": {
+          "lib/net6.0/ConfigCat.Client.dll": {
+            "assemblyVersion": "9.2.0.0",
+            "fileVersion": "9.2.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FeatureFlagsInDotNetSample/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConfigCat.Client/9.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jBa1GQo1Tnd1lCxo8z9JJFXAdktnIXfOgoVZ/1oQipt7iVtVYjmoYZXHzhF816mYWdee2BAB4uFHSBbfOHiK6w==",
+      "path": "configcat.client/9.2.0",
+      "hashPath": "configcat.client.9.2.0.nupkg.sha512"
+    }
+  }
+}
