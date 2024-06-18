@@ -1,39 +1,60 @@
-using FeatureFlagsInDotNetSample.Components;
+using Microsoft.Extensions.Options;
+using ConfigCatInDotnetSample.Configuration;
 using ConfigCat.Client;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+// Add ConfigCat configuration
+builder.Configuration.AddConfigCat(builder.Configuration["ConfigCat:Key"],
+    TimeSpan.Parse(builder.Configuration["ConfigCat:PollInterval"]));
 
-var configCatSdkKey = builder.Configuration["ConfigCatSdkKey"];
+// Configure services to use ConfigCat settings
+builder.Services.ConfigureConfigCat(builder.Configuration);
 
-// Register ConfigCatClient as a singleton service so you can inject it in your controllers, actions, etc.
-builder.Services.AddSingleton<IConfigCatClient>(sp =>
-{
-    return ConfigCatClient.Get(configCatSdkKey, options =>
-    {
-        options.PollingMode = PollingModes.LazyLoad(cacheTimeToLive: TimeSpan.FromSeconds(10));
-    });
-});
+// Add logging
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
 app.UseHttpsRedirection();
 
-app.UseStaticFiles();
-app.UseAntiforgery();
+// Define a route that handles GET requests to /api/feature
+app.MapGet("/api/feature", async (HttpContext context, IOptionsSnapshot<FeatureSet> features) =>
+{
+    var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
 
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+    try
+    {
+        var featureValue = features.Value.GrandFeature;
+        logger.LogInformation($"GrandFeature is set to: {featureValue}");
+
+        if (featureValue)
+        {
+            context.Response.StatusCode = StatusCodes.Status200OK;
+            await context.Response.WriteAsync("feature flag's on");
+        }
+        else
+        {
+            context.Response.StatusCode = StatusCodes.Status200OK;
+            await context.Response.WriteAsync("feature flag's off");
+        }
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "Error while retrieving the feature flag value.");
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        await context.Response.WriteAsync("Internal Server Error");
+    }
+});
 
 app.Run();
+
+public class FeatureSet
+{
+    public bool GrandFeature { get; set; }
+}

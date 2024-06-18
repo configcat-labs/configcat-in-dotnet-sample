@@ -55,9 +55,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/codedbychavez/repos/configcat/configcat-in-dotnet-sample/FeatureFlagsInDotNetSample.csproj",
-      "projectName": "FeatureFlagsInDotNetSample",
-      "projectPath": "/Users/codedbychavez/repos/configcat/configcat-in-dotnet-sample/FeatureFlagsInDotNetSample.csproj",
+      "projectUniqueName": "/Users/codedbychavez/repos/configcat/configcat-in-dotnet-sample/ConfigCatInDotnetSample.csproj",
+      "projectName": "ConfigCatInDotnetSample",
+      "projectPath": "/Users/codedbychavez/repos/configcat/configcat-in-dotnet-sample/ConfigCatInDotnetSample.csproj",
       "packagesPath": "/Users/codedbychavez/.nuget/packages/",
       "outputPath": "/Users/codedbychavez/repos/configcat/configcat-in-dotnet-sample/obj/",
       "projectStyle": "PackageReference",
