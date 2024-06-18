@@ -62,23 +62,28 @@ namespace ConfigCatInDotnetSample.Configuration
             });
 
             // Initial data load
-            Load();
-            _timer = new Timer(RefreshConfig, null, pollInterval, pollInterval);
+            LoadAsync().Wait(); // Block until initial load completes
+            _timer = new Timer(async _ => await RefreshConfigAsync(), null, pollInterval, pollInterval);
         }
 
-        private void RefreshConfig(object? state)
+        private async Task RefreshConfigAsync()
         {
-            Load();
+            await LoadAsync();
         }
 
         public override void Load()
         {
+            LoadAsync().Wait(); // Block until load completes
+        }
+
+        public async Task LoadAsync()
+        {
             var config = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             try
             {
-                _client.ForceRefreshAsync().Wait(); // Ensure we fetch the latest config
+                await _client.ForceRefreshAsync(); // Ensure we fetch the latest config
 
-                var allKeys = _client.GetAllKeys();
+                var allKeys = await _client.GetAllKeysAsync();
                 _logger.LogInformation($"All keys from ConfigCat: {string.Join(", ", allKeys)}");
 
                 foreach (var key in allKeys)
@@ -86,13 +91,13 @@ namespace ConfigCatInDotnetSample.Configuration
                     // Fetching the value with correct default type
                     if (key.Equals("GrandFeature", StringComparison.OrdinalIgnoreCase))
                     {
-                        var value = _client.GetValue(key, false); // Correct boolean default value
+                        var value = await _client.GetValueAsync(key, false); // Correct boolean default value
                         _logger.LogInformation($"Fetched raw value for {key}: {value}");
                         config[$"FeatureSet:{key}"] = value.ToString();
                     }
                     else
                     {
-                        var value = _client.GetValue(key, string.Empty); // Default for non-boolean
+                        var value = await _client.GetValueAsync(key, string.Empty); // Default for non-boolean
                         _logger.LogInformation($"Fetched raw value for {key}: {value}");
                         config[$"FeatureSet:{key}"] = value;
                     }
