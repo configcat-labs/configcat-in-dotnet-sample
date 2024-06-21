@@ -1,10 +1,5 @@
 using Microsoft.Extensions.Options;
 using ConfigCatInDotnetSample.Configuration;
-using ConfigCat.Client;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
