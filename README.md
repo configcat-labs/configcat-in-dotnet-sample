@@ -16,15 +16,19 @@ This repository complements the guide on integrating ConfigCat's feature managem
 dotnet --version
 ```
 
+### Add your credentials
+
+Edit the `appsettings.json` file and replace the placeholder values with your ConfigCat SDK Key and feature flag key.
+
 ### Run
 
-- Execute the following command to run the application and click the link printed to the terminal to launch the app in your browser:
+1. Execute the following command to run the application and click the link printed to the terminal to launch the app in your browser:
 
 ```sh
 dotnet watch
 ```
 
-- Click
+2. Append `/api/feature` to the URL to see the status of the feature flag.
 
 ## Learn more
 
