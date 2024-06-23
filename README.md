@@ -46,9 +46,11 @@ You can also explore other code samples for various languages, frameworks, and t
 
 Keep up with ConfigCat on [X](https://x.com/configcat), [Facebook](https://www.facebook.com/configcat), [LinkedIn](https://www.linkedin.com/company/configcat/), and [GitHub](https://github.com/configcat).
 
-## Author
+## Authors
 
-[Your Name](https://github.com/your_name)
+[Alex](https://github.com/bigmirc)
+
+[Chavez](https://github.com/codedbychavez)
 
 ## Contributions
 
