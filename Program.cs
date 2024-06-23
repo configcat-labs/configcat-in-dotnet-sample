@@ -25,8 +25,8 @@ app.MapGet("/api/feature", async (HttpContext context, IOptionsSnapshot<FeatureS
 
     try
     {
-        var featureValue = features.Value.GrandFeature;
-        logger.LogInformation($"GrandFeature is set to: {featureValue}");
+        var featureValue = features.Value.myFeature;
+        logger.LogInformation($"myFeature is set to: {featureValue}");
 
         if (featureValue)
         {
@@ -51,5 +51,5 @@ app.Run();
 
 public class FeatureSet
 {
-    public bool GrandFeature { get; set; }
+    public bool myFeature { get; set; }
 }

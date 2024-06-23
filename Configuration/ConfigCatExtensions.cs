@@ -77,24 +77,17 @@ namespace ConfigCatInDotnetSample.Configuration
                 await _client.ForceRefreshAsync(); // Ensure we fetch the latest config
 
                 var allKeys = await _client.GetAllKeysAsync();
-                _logger.LogInformation($"All keys from ConfigCat: {string.Join(", ", allKeys)}");
+                Console.WriteLine($"All keys from ConfigCat: {string.Join(", ", allKeys)}");
 
-                foreach (var key in allKeys)
+                var settings = _client.Snapshot().FetchedConfig.Settings;
+
+                foreach (var setting in settings)
                 {
-                    // Fetching the value with correct default type
-                    if (key.Equals("GrandFeature", StringComparison.OrdinalIgnoreCase))
-                    {
-                        var value = await _client.GetValueAsync(key, false); // Correct boolean default value
-                        _logger.LogInformation($"Fetched raw value for {key}: {value}");
-                        config[$"FeatureSet:{key}"] = value.ToString();
-                    }
-                    else
-                    {
-                        var value = await _client.GetValueAsync(key, string.Empty); // Default for non-boolean
-                        _logger.LogInformation($"Fetched raw value for {key}: {value}");
-                        config[$"FeatureSet:{key}"] = value;
-                    }
+                    var key = setting.Key;
+                    var value = setting.Value;
+                    Console.WriteLine($"Feature Flag: {key} | Value: {value}");
                 }
+
                 Data = config;
                 OnReload();
             }
