@@ -8,7 +8,7 @@ This repository complements the guide on integrating ConfigCat's feature managem
 
 ### Prerequisites
 
-- Download and installation the [.NET 8 SDK](https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/install).
+- Download and install the [.NET 8 SDK](https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/install).
 
 - Check if the installation was successful with the following command:
 
@@ -18,7 +18,9 @@ dotnet --version
 
 ### Add your credentials
 
-Edit the `appsettings.json` file and replace the placeholder values with your ConfigCat SDK Key and feature flag key.
+1. Edit the `appsettings.json` file and add your ConfigCat SDK Key.
+
+2. Navigate to the [ConfigCat dashboard](https://app.configcat.com) and create new feature flag named **`myFeature`**.
 
 ### Run
 
@@ -34,18 +36,20 @@ dotnet watch
 
 Useful links to technical resources.
 
-Example:
-- Next.js Documentation - learn about Next.js features and API.
-- Learn Next.js - an interactive Next.js tutorial.
+- [Introduction to .NET](https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet)
+
+- [Get started with .NET](https://learn.microsoft.com/en-us/dotnet/core/get-started) - learn how to create and run a "Hello World!" app with .NET.
 
 [**ConfigCat**](https://configcat.com) also supports many other frameworks and languages. Check out the full list of supported SDKs [here](https://configcat.com/docs/sdk-reference/overview/).
 
 You can also explore other code samples for various languages, frameworks, and topics here in the [ConfigCat labs](https://github.com/configcat-labs) on GitHub.
 
-Keep up with ConfigCat on [Twitter](https://twitter.com/configcat), [Facebook](https://www.facebook.com/configcat), [LinkedIn](https://www.linkedin.com/company/configcat/), and [GitHub](https://github.com/configcat).
+Keep up with ConfigCat on [X](https://x.com/configcat), [Facebook](https://www.facebook.com/configcat), [LinkedIn](https://www.linkedin.com/company/configcat/), and [GitHub](https://github.com/configcat).
 
 ## Author
+
 [Your Name](https://github.com/your_name)
 
 ## Contributions
+
 Contributions are welcome!
