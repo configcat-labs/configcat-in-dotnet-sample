@@ -20,7 +20,7 @@ dotnet --version
 
 1. Edit the `appsettings.json` file and add your ConfigCat SDK Key.
 
-2. Navigate to the [ConfigCat dashboard](https://app.configcat.com) and create new feature flag named **`myFeature`**.
+2. Navigate to the [ConfigCat dashboard](https://app.configcat.com) and create new feature flag with the name **`myFeature`**.
 
 ### Run
 
