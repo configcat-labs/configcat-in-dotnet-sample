@@ -84,7 +84,7 @@ namespace ConfigCatInDotnetSample.Configuration
                 foreach (var setting in settings)
                 {
                     var key = setting.Key;
-                    var value = setting.Value; // Assuming this is the setting's value
+                    var value = setting.Value;
                     Console.WriteLine($"Feature Flag: {key} | Value: {value}");
                 }
 
